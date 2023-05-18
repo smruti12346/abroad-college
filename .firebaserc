@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "study-abroad-college"
+  },
+  "targets": {
+    "study-abroad-college": {
+      "hosting": {
+        "College": [
+          "study-abroad-college"
+        ]
+      }
+    }
+  }
+}
