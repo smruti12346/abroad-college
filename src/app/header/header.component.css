@@ -4,3 +4,37 @@
 .header-left-content span i{
     margin-right: 5px;
 }
+.header-left-content ul li{list-style-type: none;float: left;padding:0px 5px}
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    /*left:-100%;*/
+    left:-10rem; /* 10rem is the min-width of dropdown-menu */
+    margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+}
+.test-menu{background:#111d5e;}
+.test-menu ul li a{font-size: 16px;
+    color: #fff;
+    position: relative;
+    font-weight: 600;
+}
+.others-options .icon {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+ul.dropdown li a{color:#000;}
+.others-options {
+    padding-left: 40px;
+}
