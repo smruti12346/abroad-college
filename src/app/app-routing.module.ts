@@ -6,6 +6,7 @@ import { CapsianUniversityComponent } from './college/capsian-university/capsian
 import { KazakhRussianMedicalUniversityComponent } from './college/kazakh-russian-medical-university/kazakh-russian-medical-university.component';
 import { KokshetauStateUniversityComponent } from './college/kokshetau-state-university/kokshetau-state-university.component';
 import{InternationalHigherSchoolOfMedicineComponent} from './college/international-higher-school-of-medicine/international-higher-school-of-medicine.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 const routes: Routes = [{
     path: '',
     component: HomeComponent
@@ -37,6 +38,11 @@ const routes: Routes = [{
   path: 'international-higher-school-of-medicine',
   component: InternationalHigherSchoolOfMedicineComponent
 
+},
+{
+  path: '**',
+  pathMatch: 'full',
+  component: PageNotFoundComponent
 }
 
 ];

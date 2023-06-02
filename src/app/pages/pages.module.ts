@@ -1,6 +1,7 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MbbsInRussiaComponent } from './mbbs-in-russia/mbbs-in-russia.component';
 import { ContactComponent } from './contact/contact.component';
@@ -10,6 +11,7 @@ import { MbbsInUzbekistanComponent } from './mbbs-in-uzbekistan/mbbs-in-uzbekist
 import { MbbsInKyrgyzstanComponent } from './mbbs-in-kyrgyzstan/mbbs-in-kyrgyzstan.component';
 import { MbbsInKazakhstanComponent } from './mbbs-in-kazakhstan/mbbs-in-kazakhstan.component';
 import { PageUnderConstructionComponent } from '../components/page-under-construction/page-under-construction.component';
+import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
-  ]
+    PagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
 })
 export class PagesModule { }

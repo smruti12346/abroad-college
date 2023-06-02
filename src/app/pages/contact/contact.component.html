@@ -74,7 +74,7 @@ role="dialog"
       </ul>
       <div class="contact-form">
         <h3>Ready to Get Started?</h3>
-        <form>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-lg-12 col-md-6 mb-3">
               <div class="form-group mb-20">
@@ -83,6 +83,7 @@ role="dialog"
                   name="name"
                   class="form-control"
                   placeholder="Your name"
+                  formControlName="your_name"
                 />
               </div>
             </div>
@@ -93,6 +94,7 @@ role="dialog"
                   name="email"
                   class="form-control"
                   placeholder="Your email address"
+                  formControlName="your_email"
                 />
               </div>
             </div>
@@ -103,6 +105,7 @@ role="dialog"
                   name="phone_number"
                   class="form-control"
                   placeholder="Your phone number"
+                  formControlName="your_number"
                 />
               </div>
             </div>
@@ -114,13 +117,16 @@ role="dialog"
                   cols="30"
                   rows="6"
                   placeholder="Write your message..."
+                  formControlName="your_message"
                 ></textarea>
               </div>
             </div>
             <div class="col-lg-12 col-md-12">
-              <button type="submit" class="default-btn">
-                Send Message<span></span>
-              </button>
+              <button type="submit" class="default-btn btn" [disabled]="btn_status" (click)="onSubmit()">
+                <div class='spinner-border text-success' *ngIf="btn_status"></div><div *ngIf="!btn_status">Send Message<i class='flaticon-paper-plane'></i></div>        
+             </button>
+              <div class="mt-4" class="text-success">{{message}}</div>
+              <div class="mt-4" class="text-danger">{{error}}</div>
               <div class="h3 text-center hidden"></div>
               <div class="clearfix"></div>
             </div>
@@ -152,7 +158,7 @@ role="dialog"
       <h2>Confused to choose the best college?</h2>
       <h6>Fill Up your details, we will get back to you!</h6>
       <br>
-        <form id="contactForm">
+        <form id="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-lg-6 col-sm-6">
               <div class="form-group">
@@ -164,6 +170,7 @@ role="dialog"
                   class="form-control"
                   required
                   data-error="Please enter your name"
+                  formControlName="your_name"
                 />
                 <div class="help-block with-errors"></div>
               </div>
@@ -178,6 +185,7 @@ role="dialog"
                   class="form-control"
                   required
                   data-error="Please enter your email"
+                  formControlName="your_email"
                 />
                 <div class="help-block with-errors"></div>
               </div>
@@ -192,6 +200,7 @@ role="dialog"
                   required
                   data-error="Please enter your number"
                   class="form-control"
+                  formControlName="your_number"
                 />
                 <div class="help-block with-errors"></div>
               </div>
@@ -206,6 +215,7 @@ role="dialog"
                   class="form-control"
                   required
                   data-error="Please enter your subject"
+                  formControlName="your_subject"
                 />
                 <div class="help-block with-errors"></div>
               </div>
@@ -221,6 +231,7 @@ role="dialog"
                   rows="8"
                   required
                   data-error="Write your message"
+                  formControlName="your_message"
                 ></textarea>
                 <div class="help-block with-errors"></div>
               </div>
@@ -244,9 +255,11 @@ role="dialog"
               </div>
             </div>
             <div class="col-lg-12 col-md-12">
-              <button type="submit" class="default-btn">
-                <span>Send message</span>
-              </button>
+              <button type="submit" class="default-btn btn" [disabled]="btn_status" (click)="onSubmit()">
+                <div class='spinner-border text-success' *ngIf="btn_status"></div><div *ngIf="!btn_status">Send Message<i class='flaticon-paper-plane'></i></div>        
+             </button>
+              <div class="mt-4" class="text-success">{{message}}</div>
+              <div class="mt-4" class="text-danger">{{error}}</div>
               <div id="msgSubmit" class="h3 text-center hidden"></div>
               <div class="clearfix"></div>
             </div>

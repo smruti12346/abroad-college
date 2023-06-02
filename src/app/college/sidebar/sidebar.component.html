@@ -1,0 +1,101 @@
+<div class="estemate-form" style="margin: 0px">
+    <h3>Request A Free Estimate</h3>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Full Name*"
+              name="your_name"
+              formControlName="your_name"
+            />
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Active Email*"
+              name="your_email"
+              formControlName="your_email"
+            />
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Phone Number*"
+              formControlName="your_number"
+            />
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Subject"
+              formControlName="your_subject"
+            />
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              rows="5"
+              placeholder="Message"
+              formControlName="your_message"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          
+          <button type="submit" class="default-btn btn" [disabled]="btn_status">
+             <div class='spinner-border text-success' *ngIf="btn_status"></div><div *ngIf="!btn_status">Send Request<i class='flaticon-paper-plane'></i></div>        
+          </button>
+          <div class="mt-4" class="text-success">{{message}}</div>
+          <div class="mt-4" class="text-danger">{{error}}</div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="related-download pd1">
+    <h3>BEST COUNTRY FOR MBBS</h3>
+    <ul>
+      <li>
+        <a routerLink="/mbbs-in-russia"
+          ><img src="assets/images/flag/russia.png" class="flag"/> MBBS IN RUSSIA</a
+        >
+      </li>
+      <li>
+        <a routerLink="/mbbs-in-georgia"
+          ><img src="assets/images/flag/georgia.png" class="flag"/> MBBS IN GEORGIA</a
+        >
+      </li>
+      <li>
+        <a routerLink="/mbbs-in-uzbekistan"
+          ><img src="assets/images/flag/uzbegistan.jpg" class="flag"/> MBBS IN
+          UZBEKISTAN</a
+        >
+      </li>
+      <li>
+        <a routerLink="/mbbs-in-kyrgyzstan"
+          ><img src="assets/images/flag/kyrgyzstan.png" class="flag"/> MBBS IN
+          KYRGYZSTAN</a
+        >
+      </li>
+      <li>
+        <a routerLink="/mbbs-in-kazakhstan"
+          ><img src="assets/images/flag/kazakhstan.png" class="flag"/> MBBS IN
+          KAZAKHSTAN</a
+        >
+      </li>
+    </ul>
+  </div>
+  
